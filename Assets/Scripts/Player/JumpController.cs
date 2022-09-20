@@ -1,40 +1,47 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using Codetox.Variables;
+﻿using Codetox.Variables;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Player
 {
-    [Serializable]
-    public class JumpController
+    public class JumpController : MonoBehaviour
     {
-        public Rigidbody2D rigidbody2D;
-        public ValueReference<float> minHeight;
-        public ValueReference<float> maxHeight;
-        public ValueReference<float> apexTime;
-        public ValueReference<int> jumpAmount;
+        [SerializeField] private new Rigidbody2D rigidbody;
+        [SerializeField] private ValueReference<float> minHeight;
+        [SerializeField] private ValueReference<float> maxHeight;
+        [SerializeField] private ValueReference<float> apexTime;
+        [SerializeField] private ValueReference<int> jumpAmount;
 
-        private bool _isGrounded;
-        private bool _isJumping;
+        public UnityEvent onJump;
+
+        private float _gravity, _maxVelocity, _minVelocity;
+        private bool _isGrounded, _isJumping;
         private int _jumpsLeft;
 
-        [SuppressMessage("ReSharper", "LocalVariableHidesMember")]
-        public void ApplyGravity(float dt)
+        private void Awake()
+        {
+            var maxHeightValue = maxHeight.Value;
+            var minHeightValue = minHeight.Value;
+            var apexTimeValue = apexTime.Value;
+
+            _gravity = 2 * maxHeightValue / (apexTimeValue * apexTimeValue);
+            _maxVelocity = 2 * maxHeightValue / apexTimeValue;
+            _minVelocity = 2 * minHeightValue / apexTimeValue;
+        }
+
+        private void FixedUpdate()
         {
             if (_isGrounded) return;
 
-            var apexTime = this.apexTime.Value;
-            var gravity = 2 * maxHeight.Value / (apexTime * apexTime);
-            var minVelocity = 2 * minHeight.Value / apexTime;
-            var velocity = rigidbody2D.velocity;
+            var velocity = rigidbody.velocity;
 
-            if (!_isJumping && velocity.y > minVelocity) velocity.y = minVelocity;
-            else velocity.y -= gravity * dt;
+            if (!_isJumping && velocity.y > _minVelocity) velocity.y = _minVelocity;
+            else velocity.y -= _gravity * Time.fixedDeltaTime;
 
-            rigidbody2D.velocity = velocity;
+            rigidbody.velocity = velocity;
         }
 
-        public void OnJump(bool isJumping)
+        public void Jump(bool isJumping)
         {
             if (!isJumping)
             {
@@ -43,20 +50,21 @@ namespace Player
             }
 
             if (_jumpsLeft <= 0) return;
-
-            var maxVelocity = 2 * maxHeight.Value / apexTime.Value;
-
-            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, maxVelocity);
+            rigidbody.velocity = new Vector2(rigidbody.velocity.x, _maxVelocity);
+            onJump?.Invoke();
             _isJumping = true;
             _jumpsLeft--;
         }
 
-        public void OnGrounded(bool isGrounded)
+        public void OnTouchGround(bool isGrounded)
         {
-            _isGrounded = isGrounded;
+            if (!isGrounded)
+            {
+                _isGrounded = false;
+                return;
+            }
 
-            if (!_isGrounded) return;
-
+            _isGrounded = true;
             _jumpsLeft = jumpAmount.Value;
         }
     }

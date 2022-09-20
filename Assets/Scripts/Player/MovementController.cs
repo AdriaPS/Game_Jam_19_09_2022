@@ -1,33 +1,32 @@
-﻿using System;
-using Codetox.Variables;
+﻿using Codetox.Variables;
 using UnityEngine;
 
 namespace Player
 {
-    [Serializable]
-    public class MovementController
+    public class MovementController : MonoBehaviour
     {
-        public Rigidbody2D rigidbody2D;
-        public Variable<Vector2> direction;
-        public ValueReference<float> speed;
-        public ValueReference<float> smoothTime;
+        [SerializeField] private new Rigidbody2D rigidbody;
+        [SerializeField] private ValueReference<Vector2> direction;
+        [SerializeField] private ValueReference<float> speed;
+        [SerializeField] private ValueReference<float> smoothTime;
 
-        private float _velocityX;
+        private float _currentVelocity;
 
-        public void Move()
+        private void FixedUpdate()
         {
-            var transform = rigidbody2D.transform;
-            var currentVelocityX = rigidbody2D.velocity.x;
-            var targetVelocityX = direction.Value.x * speed.Value;
-            var finalVelocityX = Mathf.SmoothDamp(currentVelocityX, targetVelocityX, ref _velocityX, smoothTime.Value);
+            var rigidbodyTransform = rigidbody.transform;
+            var directionValue = direction.Value.x;
+            var currentVelocity = rigidbody.velocity;
+            var targetVelocity = directionValue * speed.Value;
+            var finalVelocity = Mathf.SmoothDamp(currentVelocity.x, targetVelocity, ref _currentVelocity, smoothTime.Value);
 
-            rigidbody2D.velocity = new Vector2(finalVelocityX, rigidbody2D.velocity.y);
+            rigidbody.velocity = new Vector2(finalVelocity, currentVelocity.y);
 
-            transform.right = targetVelocityX switch
+            rigidbodyTransform.right = directionValue switch
             {
                 > 0f => Vector3.right,
                 < 0f => Vector3.left,
-                _ => transform.right
+                _ => rigidbodyTransform.right
             };
         }
     }
