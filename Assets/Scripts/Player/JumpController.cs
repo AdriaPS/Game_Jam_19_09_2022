@@ -1,5 +1,4 @@
-﻿using System;
-using Codetox.Attributes;
+﻿using Codetox.Attributes;
 using Codetox.Variables;
 using UnityEngine;
 using UnityEngine.Events;
