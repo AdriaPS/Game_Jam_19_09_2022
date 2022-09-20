@@ -1,4 +1,6 @@
-﻿using Codetox.Variables;
+﻿using System;
+using Codetox.Attributes;
+using Codetox.Variables;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,16 +8,18 @@ namespace Player
 {
     public class JumpController : MonoBehaviour
     {
-        [SerializeField] private new Rigidbody2D rigidbody;
-        [SerializeField] private ValueReference<float> minHeight;
-        [SerializeField] private ValueReference<float> maxHeight;
-        [SerializeField] private ValueReference<float> apexTime;
-        [SerializeField] private ValueReference<int> jumpAmount;
+        public new Rigidbody2D rigidbody;
+        public ValueReference<float> minHeight;
+        public ValueReference<float> maxHeight;
+        public ValueReference<float> apexTime;
+        public ValueReference<int> jumpAmount;
+        
+        [SerializeField] [Disabled] private bool isGrounded;
+        [SerializeField] [Disabled] private bool isJumping;
 
         public UnityEvent onJump;
 
         private float _gravity, _maxVelocity, _minVelocity;
-        private bool _isGrounded, _isJumping;
         private int _jumpsLeft;
 
         private void Awake()
@@ -29,13 +33,19 @@ namespace Player
             _minVelocity = 2 * minHeightValue / apexTimeValue;
         }
 
+        private void OnDisable()
+        {
+            isGrounded = false;
+            isJumping = false;
+        }
+
         private void FixedUpdate()
         {
-            if (_isGrounded) return;
+            if (isGrounded) return;
 
             var velocity = rigidbody.velocity;
 
-            if (!_isJumping && velocity.y > _minVelocity) velocity.y = _minVelocity;
+            if (!isJumping && velocity.y > _minVelocity) velocity.y = _minVelocity;
             else velocity.y -= _gravity * Time.fixedDeltaTime;
 
             rigidbody.velocity = velocity;
@@ -45,27 +55,22 @@ namespace Player
         {
             if (!isJumping)
             {
-                _isJumping = false;
+                this.isJumping = false;
                 return;
             }
 
-            if (_jumpsLeft <= 0) return;
+            if (!isGrounded) return;
+            
             rigidbody.velocity = new Vector2(rigidbody.velocity.x, _maxVelocity);
+            this.isJumping = true;
             onJump?.Invoke();
-            _isJumping = true;
-            _jumpsLeft--;
+            //_jumpsLeft--;
         }
 
         public void OnTouchGround(bool isGrounded)
         {
-            if (!isGrounded)
-            {
-                _isGrounded = false;
-                return;
-            }
-
-            _isGrounded = true;
-            _jumpsLeft = jumpAmount.Value;
+            this.isGrounded = isGrounded;
+            //_jumpsLeft = jumpAmount.Value;
         }
     }
 }

@@ -5,10 +5,10 @@ namespace Player
 {
     public class MovementController : MonoBehaviour
     {
-        [SerializeField] private new Rigidbody2D rigidbody;
-        [SerializeField] private ValueReference<Vector2> direction;
-        [SerializeField] private ValueReference<float> speed;
-        [SerializeField] private ValueReference<float> smoothTime;
+        public new Rigidbody2D rigidbody;
+        public ValueReference<Vector2> direction;
+        public ValueReference<float> speed;
+        public ValueReference<float> smoothTime;
 
         private float _currentVelocity;
 

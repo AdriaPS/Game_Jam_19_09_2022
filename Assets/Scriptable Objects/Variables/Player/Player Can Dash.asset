@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 407c11a8d09c4986999ceb787e87b3bc, type: 3}
-  m_Name: Player Dash Is Ready
+  m_Name: Player Can Dash
   m_EditorClassIdentifier: 
   details:
     title: 
     description: 
     author: 
-  id: ea0a640ee25abf74fb4ad4f386d34b80
-  value: 1
+  id: bcd91908861f0c4418c2b659831ce93b
+  value: 0
   readOnly: 0
