@@ -51,24 +51,16 @@ namespace Player
             var x = dir.x;
             var y = dir.y;
 
-            return x switch
-            {
-                >= 0.20f and <= 0.80f when y is >= 0.20f and <= 0.80f => new Vector2(1, 1).normalized,
-                >= -0.80f and <= -0.20f when y is >= 0.20f and <= 0.80f => new Vector2(-1, 1).normalized,
-                >= 0.20f and <= 0.80f when y is >= -0.80f and <= -0.20f => new Vector2(1, -1).normalized,
-                >= -0.80f and <= -0.20f when y is >= -0.80f and <= -0.20f => new Vector2(-1, -1).normalized,
-                _ => y switch
-                {
-                    > 0.80f => Vector2.up,
-                    < -0.80f => Vector2.down,
-                    _ => x switch
-                    {
-                        > 0.80f => Vector2.right,
-                        < -0.80f => Vector2.left,
-                        _ => rigidbody.transform.right
-                    }
-                }
-            };
+            if (x >= 0.25f && y >= 0.25f) return new Vector2(1, 1).normalized;
+            if (x <= -0.25f && y >= 0.25f) return new Vector2(-1, 1).normalized;
+            if (x >= 0.25f && y <= -0.25f) return new Vector2(1, -1).normalized;
+            if (x <= -0.25f && y <= -0.25f) return new Vector2(-1, -1).normalized;
+            if (x > 0f && y is > -0.25f and < 0.25f) return Vector2.right;
+            if (x < 0f && y is > -0.25f and < 0.25f) return Vector2.left;
+            if (y > 0f && x is > -0.25f and < 0.25f) return Vector2.up;
+            if (y < 0f && x is > -0.25f and < 0.25f) return Vector2.down;
+
+            return rigidbody.transform.right;
         }
     }
 }

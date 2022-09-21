@@ -22,8 +22,6 @@ public class TemperatureWave : MonoBehaviour
     private void OnEnable()
     {
         Time.timeScale = 0;
-        var parent = transform.parent;
-        transform.parent = null;
         transform.localScale = Vector3.zero;
         transform.DOScale(Vector3.one * radius.Value * 2, time.Value).SetEase(ease).SetUpdate(true)
             .OnComplete(() =>
@@ -32,7 +30,6 @@ public class TemperatureWave : MonoBehaviour
                 colliders.ForEach(c => ApplyTemperature(c.gameObject));
                 Time.timeScale = 1;
                 gameObject.SetActive(false);
-                transform.parent = parent;
             });
     }
 
