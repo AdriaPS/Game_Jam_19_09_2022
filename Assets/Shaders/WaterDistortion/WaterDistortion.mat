@@ -125,7 +125,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _GradientScale: 5
+    - _GradientScale: 4.91
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -149,7 +149,7 @@ Material:
     - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DistortionPosition: {r: 1, g: 1, b: 0, a: 0}
-    - _DistortionPower: {r: 0, g: 0.05, b: 0, a: 0}
+    - _DistortionPower: {r: 0.01, g: 0.05, b: 0, a: 0}
     - _DistortionTiling: {r: 1, g: 1, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
