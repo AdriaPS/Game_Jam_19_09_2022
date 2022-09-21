@@ -47,8 +47,8 @@ Material:
     - _QueueOffset: 0
     - _isGlowing: 0
     m_Colors:
-    - _CapeColor1: {r: 0.98039216, g: 0, b: 0.023529412, a: 1}
-    - _CapeColor2: {r: 0.42352945, g: 0.14117648, b: 0.3372549, a: 1}
+    - _CapeColor1: {r: 0.70980394, g: 0.38431376, b: 0.47450984, a: 1}
+    - _CapeColor2: {r: 0.41960788, g: 0.21176472, b: 0.3529412, a: 1}
     - _CapeColorChanged1: {r: 0.6117647, g: 2.9960785, b: 2.9960785, a: 0}
     - _CapeColorChanged2: {r: 0.10980392, g: 1.5686275, b: 2.9960785, a: 0}
     - _GlowColor: {r: 3.623529, g: 3.309804, b: 3.309804, a: 0}
