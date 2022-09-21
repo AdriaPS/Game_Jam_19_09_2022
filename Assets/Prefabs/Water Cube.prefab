@@ -182,7 +182,7 @@ Transform:
   m_GameObject: {fileID: 1785084913241096440}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.249975, y: 2.2501318, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1785084913371655068}
@@ -312,7 +312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785084913371655066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.125, y: 1.125, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -336,10 +336,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   water:
     prefab: {fileID: 1785084913671889665}
-    defaultState: 0
+    defaultState: 1
   ice:
     prefab: {fileID: 1785084913241096440}
-    defaultState: 1
+    defaultState: 0
   vapor:
     prefab: {fileID: 1785084913531327870}
     defaultState: 0
@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 1785084913531327857}
   - component: {fileID: 1785084913531327856}
   - component: {fileID: 1785084913531327871}
+  - component: {fileID: 8992316818291902141}
   m_Layer: 4
   m_Name: Vapor State
   m_TagString: Untagged
@@ -372,7 +373,7 @@ Transform:
   m_GameObject: {fileID: 1785084913531327870}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2504, y: 2.2504096, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1785084912579396203}
@@ -497,6 +498,18 @@ BuoyancyEffector2D:
   m_FlowAngle: -90
   m_FlowMagnitude: 20
   m_FlowVariation: 0
+--- !u!114 &8992316818291902141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785084913531327870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ddac7f451a48ada2734b6f7f55aeb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1785084913671889665
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +539,7 @@ Transform:
   m_GameObject: {fileID: 1785084913671889665}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2504, y: 2.2504096, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1785084913371655068}

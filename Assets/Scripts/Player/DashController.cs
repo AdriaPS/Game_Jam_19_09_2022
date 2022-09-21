@@ -18,6 +18,13 @@ namespace Player
         public UnityEvent onDashStart;
         public UnityEvent onDashFinish;
 
+        private Tweener tween;
+
+        private void OnDisable()
+        {
+            tween?.Kill();
+        }
+
         public void Dash()
         {
             if (!canDash.Value || !isReady.Value)
@@ -25,20 +32,17 @@ namespace Player
                 onDashFinish?.Invoke();
                 return;
             }
-            
+
             var finalPosition = rigidbody.position + distance.Value * GetDashDirection();
 
             canDash.Value = false;
             isReady.Value = false;
             rigidbody.velocity = Vector2.zero;
-            rigidbody
+            tween = rigidbody
                 .DOMove(finalPosition, time.Value)
                 .SetEase(ease).OnStart(() => onDashStart?.Invoke())
-                .OnComplete(() =>
-                {
-                    DOVirtual.DelayedCall(cooldown.Value, () => isReady.Value = true);
-                    onDashFinish?.Invoke();
-                });
+                .OnComplete(() => { onDashFinish?.Invoke(); });
+            DOVirtual.DelayedCall(time.Value + cooldown.Value, () => isReady.Value = true);
         }
 
         private Vector2 GetDashDirection()
