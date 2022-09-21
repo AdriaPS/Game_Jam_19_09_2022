@@ -766,11 +766,11 @@ MonoBehaviour:
     variableValue: {fileID: 0}
   maxHeight:
     useField: 1
-    fieldValue: 6
+    fieldValue: 4
     variableValue: {fileID: 0}
   apexTime:
     useField: 1
-    fieldValue: 0.35
+    fieldValue: 0.3
     variableValue: {fileID: 0}
   coyoteTime:
     useField: 1
@@ -946,11 +946,11 @@ MonoBehaviour:
     variableValue: {fileID: 0}
   maxHeight:
     useField: 1
-    fieldValue: 6
+    fieldValue: 4
     variableValue: {fileID: 0}
   apexTime:
     useField: 1
-    fieldValue: 0.35
+    fieldValue: 0.3
     variableValue: {fileID: 0}
   coyoteTime:
     useField: 1
@@ -1208,11 +1208,11 @@ MonoBehaviour:
     variableValue: {fileID: 0}
   maxHeight:
     useField: 1
-    fieldValue: 6
+    fieldValue: 4
     variableValue: {fileID: 0}
   apexTime:
     useField: 1
-    fieldValue: 0.35
+    fieldValue: 0.3
     variableValue: {fileID: 0}
   coyoteTime:
     useField: 1
@@ -1888,7 +1888,7 @@ MonoBehaviour:
     variableValue: {fileID: 0}
   cooldown:
     useField: 1
-    fieldValue: 0.25
+    fieldValue: 0.1
     variableValue: {fileID: 0}
   canDash:
     useField: 0
@@ -1898,7 +1898,7 @@ MonoBehaviour:
     useField: 0
     fieldValue: 0
     variableValue: {fileID: 11400000, guid: 02242291439ef6b4fa0355b941cbca23, type: 2}
-  ease: 9
+  ease: 10
   onDashStart:
     m_PersistentCalls:
       m_Calls:
