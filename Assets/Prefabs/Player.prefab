@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &84094111029022142
+--- !u!1 &902863774808639169
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,86 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5501998586322807751}
-  - component: {fileID: 7718101612185157606}
-  - component: {fileID: 3625839863855346043}
+  - component: {fileID: 2695182276775157892}
+  - component: {fileID: 8378336619717225220}
+  - component: {fileID: 8516191920552546735}
   m_Layer: 0
-  m_Name: Jump Controller
+  m_Name: Wall Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5501998586322807751
+--- !u!4 &2695182276775157892
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84094111029022142}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_GameObject: {fileID: 902863774808639169}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.49999994, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3346810346150030269}
+  m_Father: {fileID: 3383345475859973536}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7718101612185157606
+--- !u!61 &8378336619717225220
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902863774808639169}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.75}
+  m_EdgeRadius: 0
+--- !u!114 &8516191920552546735
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84094111029022142}
+  m_GameObject: {fileID: 902863774808639169}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aceb4312ddc440a80f2565b3f117107, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b1aba91f9544cad84a1f30dba38d5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  event: {fileID: 11400000, guid: 050249d6529398b46ac5c97f4acdfbda, type: 2}
-  unityEventResponse:
+  targetLayers:
+    useField: 1
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 512
+    variableValue: {fileID: 0}
+  detectionStrategy: -1
+  onCollisionEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onCollisionExit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3625839863855346043}
-        m_TargetAssemblyTypeName: Player.JumpController, Assembly-CSharp
-        m_MethodName: Jump
-        m_Mode: 0
+      - m_Target: {fileID: 7841251132019295223}
+        m_TargetAssemblyTypeName: Player.WallController, Assembly-CSharp
+        m_MethodName: OnLeaveWall
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -61,41 +96,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3625839863855346043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84094111029022142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cac8db0e59744f7a49b0d0ab633887e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbody: {fileID: 6241783492734311673}
-  minHeight:
-    useField: 1
-    fieldValue: 1
-    variableValue: {fileID: 0}
-  maxHeight:
-    useField: 1
-    fieldValue: 6
-    variableValue: {fileID: 0}
-  apexTime:
-    useField: 1
-    fieldValue: 0.35
-    variableValue: {fileID: 0}
-  jumpAmount:
-    useField: 1
-    fieldValue: 1
-    variableValue: {fileID: 0}
-  isGrounded: 0
-  isJumping: 0
-  onJump:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!1 &416434294438587510
+--- !u!1 &1109672186676192383
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,38 +104,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2004965155179896228}
-  - component: {fileID: 4033890461835208531}
+  - component: {fileID: 3383345475859973536}
+  - component: {fileID: 2687579931015086886}
+  - component: {fileID: 8801425043826699070}
   m_Layer: 0
-  m_Name: Cold Shot State
+  m_Name: Wall State
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &2004965155179896228
+--- !u!4 &3383345475859973536
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416434294438587510}
+  m_GameObject: {fileID: 1109672186676192383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4110761764294079495}
+  - {fileID: 732878773714609583}
+  - {fileID: 2695182276775157892}
   m_Father: {fileID: 6241783493383126145}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4033890461835208531
+--- !u!114 &2687579931015086886
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416434294438587510}
+  m_GameObject: {fileID: 1109672186676192383}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8ee3985cbf44a03b87af5397e33788f, type: 3}
@@ -146,152 +149,230 @@ MonoBehaviour:
   onExitState:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &725081321206613661
-GameObject:
+--- !u!114 &8801425043826699070
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5068217888336237728}
-  m_Layer: 0
-  m_Name: Source
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5068217888336237728
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725081321206613661}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6353352611586564512}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1216977616629479648
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6242953221448711592}
-  m_Layer: 0
-  m_Name: Source
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6242953221448711592
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216977616629479648}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3570338981890109216}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1448252657696553070
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2185069054951690500}
-  - component: {fileID: 2561454257406023364}
-  m_Layer: 0
-  m_Name: Visualizer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2185069054951690500
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448252657696553070}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.499998, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6353352611586564512}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2561454257406023364
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1448252657696553070}
+  m_GameObject: {fileID: 1109672186676192383}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.2509804}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d99689d07e4220862eb4341c1c736a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event: {fileID: 11400000, guid: c52d04a70f6465148a69080658039083, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6241783493383126144}
+        m_TargetAssemblyTypeName: Codetox.FSM.StateMachineComponent, com.aruizrab.codetox
+        m_MethodName: set_CurrentState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6241783493924465477}
+          m_ObjectArgumentAssemblyTypeName: Codetox.FSM.StateComponent, com.aruizrab.codetox
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &2357062359668829166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7872233577002126339}
+  - component: {fileID: 3862528124723460059}
+  - component: {fileID: 8818481656639564867}
+  - component: {fileID: 5968850512360137281}
+  - component: {fileID: 1995744412399566871}
+  m_Layer: 0
+  m_Name: Ground Detector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7872233577002126339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2357062359668829166}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8321337852534224573}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &3862528124723460059
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2357062359668829166}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.35}
+  m_EdgeRadius: 0
+--- !u!114 &8818481656639564867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2357062359668829166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1aba91f9544cad84a1f30dba38d5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayers:
+    useField: 1
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 256
+    variableValue: {fileID: 0}
+  detectionStrategy: -1
+  onCollisionEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: d9c8494f8a88a4544ac82264c1c65a41, type: 2}
+        m_TargetAssemblyTypeName: Codetox.Variables.Variable`1[[System.Boolean, mscorlib
+        m_MethodName: set_Value
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 1c9ec223cf3079a42852567705ea5111, type: 2}
+        m_TargetAssemblyTypeName: Codetox.Variables.Variable`1[[System.Boolean, mscorlib
+        m_MethodName: set_Value
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  onCollisionExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: d9c8494f8a88a4544ac82264c1c65a41, type: 2}
+        m_TargetAssemblyTypeName: Codetox.Variables.Variable`1[[System.Boolean, mscorlib
+        m_MethodName: set_Value
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5968850512360137281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2357062359668829166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1aba91f9544cad84a1f30dba38d5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayers:
+    useField: 1
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 128
+    variableValue: {fileID: 0}
+  detectionStrategy: -1
+  onCollisionEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6241783493383126144}
+        m_TargetAssemblyTypeName: Codetox.FSM.StateMachineComponent, com.aruizrab.codetox
+        m_MethodName: set_CurrentState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 6241783493570651909}
+          m_ObjectArgumentAssemblyTypeName: Codetox.FSM.StateComponent, com.aruizrab.codetox
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1995744412399566871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2357062359668829166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1aba91f9544cad84a1f30dba38d5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayers:
+    useField: 1
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 16
+    variableValue: {fileID: 0}
+  detectionStrategy: -1
+  onCollisionEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6241783493383126144}
+        m_TargetAssemblyTypeName: Codetox.FSM.StateMachineComponent, com.aruizrab.codetox
+        m_MethodName: set_CurrentState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2818325997813059232}
+          m_ObjectArgumentAssemblyTypeName: Codetox.FSM.StateComponent, com.aruizrab.codetox
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2799287558846242075
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,8 +384,8 @@ GameObject:
   - component: {fileID: 7729382302728229743}
   - component: {fileID: 699752583863952132}
   - component: {fileID: 5831659931118070723}
-  - component: {fileID: 3910066712580182352}
-  - component: {fileID: 1596708796365893674}
+  - component: {fileID: 8010500048104933934}
+  - component: {fileID: 5977863672300968861}
   m_Layer: 0
   m_Name: Ground Detector
   m_TagString: Untagged
@@ -340,7 +421,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -351,7 +432,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 0.35}
+  m_Size: {x: 0.9, y: 0.35}
   m_EdgeRadius: 0
 --- !u!114 &5831659931118070723
 MonoBehaviour:
@@ -375,9 +456,9 @@ MonoBehaviour:
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6241783492642854079}
-        m_TargetAssemblyTypeName: Player.JumpController, Assembly-CSharp
-        m_MethodName: OnTouchGround
+      - m_Target: {fileID: 11400000, guid: d9c8494f8a88a4544ac82264c1c65a41, type: 2}
+        m_TargetAssemblyTypeName: Codetox.Variables.Variable`1[[System.Boolean, mscorlib
+        m_MethodName: set_Value
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -402,9 +483,9 @@ MonoBehaviour:
   onCollisionExit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6241783492642854079}
-        m_TargetAssemblyTypeName: Player.JumpController, Assembly-CSharp
-        m_MethodName: OnTouchGround
+      - m_Target: {fileID: 11400000, guid: d9c8494f8a88a4544ac82264c1c65a41, type: 2}
+        m_TargetAssemblyTypeName: Codetox.Variables.Variable`1[[System.Boolean, mscorlib
+        m_MethodName: set_Value
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -414,7 +495,44 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3910066712580182352
+--- !u!114 &8010500048104933934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2799287558846242075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1aba91f9544cad84a1f30dba38d5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayers:
+    useField: 1
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 256
+    variableValue: {fileID: 0}
+  detectionStrategy: -1
+  onCollisionEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6241783493383126144}
+        m_TargetAssemblyTypeName: Codetox.FSM.StateMachineComponent, com.aruizrab.codetox
+        m_MethodName: set_CurrentState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7418826982645374075}
+          m_ObjectArgumentAssemblyTypeName: Codetox.FSM.StateComponent, com.aruizrab.codetox
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5977863672300968861
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -436,85 +554,12 @@ MonoBehaviour:
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6241783492642854079}
-        m_TargetAssemblyTypeName: Player.JumpController, Assembly-CSharp
-        m_MethodName: OnTouchGround
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 1c9ec223cf3079a42852567705ea5111, type: 2}
-        m_TargetAssemblyTypeName: Codetox.Variables.Variable`1[[System.Boolean, mscorlib
-        m_MethodName: set_Value
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onCollisionExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6241783492642854079}
-        m_TargetAssemblyTypeName: Player.JumpController, Assembly-CSharp
-        m_MethodName: OnTouchGround
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 1c9ec223cf3079a42852567705ea5111, type: 2}
-        m_TargetAssemblyTypeName: Codetox.Variables.Variable`1[[System.Boolean, mscorlib
-        m_MethodName: set_Value
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
---- !u!114 &1596708796365893674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2799287558846242075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b1aba91f9544cad84a1f30dba38d5fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetLayers:
-    useField: 1
-    fieldValue:
-      serializedVersion: 2
-      m_Bits: 256
-    variableValue: {fileID: 0}
-  detectionStrategy: -1
-  onCollisionEnter:
-    m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 6241783493383126144}
         m_TargetAssemblyTypeName: Codetox.FSM.StateMachineComponent, com.aruizrab.codetox
         m_MethodName: set_CurrentState
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4078212158424299197}
+          m_ObjectArgument: {fileID: 2818325997813059232}
           m_ObjectArgumentAssemblyTypeName: Codetox.FSM.StateComponent, com.aruizrab.codetox
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -524,7 +569,7 @@ MonoBehaviour:
   onCollisionExit:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &3001364505018652811
+--- !u!1 &3024009401661123334
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -532,50 +577,56 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 783618160774514066}
-  - component: {fileID: 6832741882952745947}
+  - component: {fileID: 4054604659798809094}
+  - component: {fileID: 2419197947955729240}
   m_Layer: 0
-  m_Name: Hot Shot State
+  m_Name: Movement Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &783618160774514066
+  m_IsActive: 1
+--- !u!4 &4054604659798809094
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3001364505018652811}
+  m_GameObject: {fileID: 3024009401661123334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7993785766545931280}
-  m_Father: {fileID: 6241783493383126145}
-  m_RootOrder: 4
+  m_Children: []
+  m_Father: {fileID: 8321337852534224573}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6832741882952745947
+--- !u!114 &2419197947955729240
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3001364505018652811}
+  m_GameObject: {fileID: 3024009401661123334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8ee3985cbf44a03b87af5397e33788f, type: 3}
+  m_Script: {fileID: 11500000, guid: 800d4970e8ec491b9200a66f99dfe5fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onEnterState:
-    m_PersistentCalls:
-      m_Calls: []
-  onExitState:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!1 &4881555412452558358
+  rigidbody: {fileID: 6241783492734311673}
+  direction:
+    useField: 0
+    fieldValue: {x: 0, y: 0}
+    variableValue: {fileID: 11400000, guid: a05c701c6f534844e9118e67ba64cc25, type: 2}
+  speed:
+    useField: 1
+    fieldValue: 25
+    variableValue: {fileID: 0}
+  smoothTime:
+    useField: 1
+    fieldValue: 0.15
+    variableValue: {fileID: 0}
+--- !u!1 &3027978817935965410
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -583,10 +634,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 603669656314385796}
-  - component: {fileID: 1720407501151590173}
-  - component: {fileID: 6535151716656634427}
-  - component: {fileID: 8838205464738170964}
+  - component: {fileID: 5203201405864045820}
+  - component: {fileID: 7314041667184287643}
+  - component: {fileID: 8600349744411158429}
+  - component: {fileID: 4305946346122352075}
   m_Layer: 0
   m_Name: Ground Detector
   m_TagString: Untagged
@@ -594,35 +645,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &603669656314385796
+--- !u!4 &5203201405864045820
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4881555412452558358}
+  m_GameObject: {fileID: 3027978817935965410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3346810346150030269}
+  m_Father: {fileID: 6714892897369336675}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1720407501151590173
+--- !u!61 &7314041667184287643
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4881555412452558358}
+  m_GameObject: {fileID: 3027978817935965410}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -633,15 +684,15 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 0.35}
+  m_Size: {x: 0.9, y: 0.35}
   m_EdgeRadius: 0
---- !u!114 &6535151716656634427
+--- !u!114 &8600349744411158429
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4881555412452558358}
+  m_GameObject: {fileID: 3027978817935965410}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b1aba91f9544cad84a1f30dba38d5fc, type: 3}
@@ -651,15 +702,15 @@ MonoBehaviour:
     useField: 1
     fieldValue:
       serializedVersion: 2
-      m_Bits: 256
+      m_Bits: 16
     variableValue: {fileID: 0}
   detectionStrategy: -1
   onCollisionEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3625839863855346043}
-        m_TargetAssemblyTypeName: Player.JumpController, Assembly-CSharp
-        m_MethodName: OnTouchGround
+      - m_Target: {fileID: 11400000, guid: d9c8494f8a88a4544ac82264c1c65a41, type: 2}
+        m_TargetAssemblyTypeName: Codetox.Variables.Variable`1[[System.Boolean, mscorlib
+        m_MethodName: set_Value
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -681,65 +732,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 9199054096159010667}
-        m_TargetAssemblyTypeName: Player.MovementController, Assembly-CSharp
-        m_MethodName: SetDoSmoothing
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
   onCollisionExit:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3625839863855346043}
-        m_TargetAssemblyTypeName: Player.JumpController, Assembly-CSharp
-        m_MethodName: OnTouchGround
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 9199054096159010667}
-        m_TargetAssemblyTypeName: Player.MovementController, Assembly-CSharp
-        m_MethodName: SetDoSmoothing
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &8838205464738170964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4881555412452558358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b1aba91f9544cad84a1f30dba38d5fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetLayers:
-    useField: 1
-    fieldValue:
-      serializedVersion: 2
-      m_Bits: 144
-    variableValue: {fileID: 0}
-  detectionStrategy: -1
-  onCollisionEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6241783493383126144}
@@ -754,7 +747,165 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4305946346122352075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027978817935965410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1aba91f9544cad84a1f30dba38d5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayers:
+    useField: 1
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 256
+    variableValue: {fileID: 0}
+  detectionStrategy: -1
+  onCollisionEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6241783493383126144}
+        m_TargetAssemblyTypeName: Codetox.FSM.StateMachineComponent, com.aruizrab.codetox
+        m_MethodName: set_CurrentState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7418826982645374075}
+          m_ObjectArgumentAssemblyTypeName: Codetox.FSM.StateComponent, com.aruizrab.codetox
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &3046194171294812883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8881822706005592063}
+  - component: {fileID: 7900419637432373432}
+  m_Layer: 0
+  m_Name: Movement Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8881822706005592063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3046194171294812883}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6714892897369336675}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7900419637432373432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3046194171294812883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800d4970e8ec491b9200a66f99dfe5fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 6241783492734311673}
+  direction:
+    useField: 0
+    fieldValue: {x: 0, y: 0}
+    variableValue: {fileID: 11400000, guid: a05c701c6f534844e9118e67ba64cc25, type: 2}
+  speed:
+    useField: 1
+    fieldValue: 15
+    variableValue: {fileID: 0}
+  smoothTime:
+    useField: 1
+    fieldValue: 0.05
+    variableValue: {fileID: 0}
+--- !u!1 &4473647998514718372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 838850265262557315}
+  - component: {fileID: 2488666592192592295}
+  m_Layer: 0
+  m_Name: Jump Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &838850265262557315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4473647998514718372}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6714892897369336675}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2488666592192592295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4473647998514718372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cac8db0e59744f7a49b0d0ab633887e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 6241783492734311673}
+  minHeight:
+    useField: 1
+    fieldValue: 1
+    variableValue: {fileID: 0}
+  maxHeight:
+    useField: 1
+    fieldValue: 6
+    variableValue: {fileID: 0}
+  apexTime:
+    useField: 1
+    fieldValue: 0.35
+    variableValue: {fileID: 0}
+  coyoteTime:
+    useField: 1
+    fieldValue: 0.1
+    variableValue: {fileID: 0}
+  isJumping: {fileID: 11400000, guid: 6a27a08c3d256be49b7822a042ad4c50, type: 2}
+  isGrounded: {fileID: 11400000, guid: d9c8494f8a88a4544ac82264c1c65a41, type: 2}
+  canJump: {fileID: 11400000, guid: db41417b32043d14a981fc415e613fd0, type: 2}
+  onJump:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &4988891550406932575
@@ -864,7 +1015,7 @@ MonoBehaviour:
     fieldValue: 0.2
     variableValue: {fileID: 0}
   ease: 6
---- !u!1 &5960842294992730332
+--- !u!1 &5174827825502105387
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -872,91 +1023,161 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4110761764294079495}
-  - component: {fileID: 1402068548630460235}
-  - component: {fileID: 7912043730776254777}
+  - component: {fileID: 6685314955250450907}
+  - component: {fileID: 5561564049063440112}
   m_Layer: 0
-  m_Name: Shooter
+  m_Name: Jump Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4110761764294079495
+--- !u!4 &6685314955250450907
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5960842294992730332}
+  m_GameObject: {fileID: 5174827825502105387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3570338981890109216}
-  m_Father: {fileID: 2004965155179896228}
-  m_RootOrder: 0
+  m_Children: []
+  m_Father: {fileID: 8321337852534224573}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1402068548630460235
+--- !u!114 &5561564049063440112
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5960842294992730332}
+  m_GameObject: {fileID: 5174827825502105387}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a2b9f490a1a40749d7a407e7e1ec4df, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cac8db0e59744f7a49b0d0ab633887e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 6241783492734311673}
-  direction: {fileID: 11400000, guid: a05c701c6f534844e9118e67ba64cc25, type: 2}
-  distance:
+  minHeight:
     useField: 1
-    fieldValue: 20
+    fieldValue: 1
     variableValue: {fileID: 0}
-  source: {fileID: 6242953221448711592}
---- !u!114 &7912043730776254777
+  maxHeight:
+    useField: 1
+    fieldValue: 6
+    variableValue: {fileID: 0}
+  apexTime:
+    useField: 1
+    fieldValue: 0.35
+    variableValue: {fileID: 0}
+  coyoteTime:
+    useField: 1
+    fieldValue: 0.1
+    variableValue: {fileID: 0}
+  isJumping: {fileID: 11400000, guid: 6a27a08c3d256be49b7822a042ad4c50, type: 2}
+  isGrounded: {fileID: 11400000, guid: d9c8494f8a88a4544ac82264c1c65a41, type: 2}
+  canJump: {fileID: 11400000, guid: db41417b32043d14a981fc415e613fd0, type: 2}
+  onJump:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &5518608612770879789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1503054850797761536}
+  - component: {fileID: 2817831069822963794}
+  - component: {fileID: 8838440205514576808}
+  m_Layer: 0
+  m_Name: Wall Detector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1503054850797761536
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518608612770879789}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.49999994, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8321337852534224573}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2817831069822963794
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518608612770879789}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.75}
+  m_EdgeRadius: 0
+--- !u!114 &8838440205514576808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5960842294992730332}
+  m_GameObject: {fileID: 5518608612770879789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d99689d07e4220862eb4341c1c736a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b1aba91f9544cad84a1f30dba38d5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  event: {fileID: 11400000, guid: 7186cb88bce4efe4b8fc064355e6d6d4, type: 2}
-  unityEventResponse:
+  targetLayers:
+    useField: 1
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 512
+    variableValue: {fileID: 0}
+  detectionStrategy: -1
+  onCollisionEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1402068548630460235}
-        m_TargetAssemblyTypeName: Player.ShootingController, Assembly-CSharp
-        m_MethodName: ShootCold
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 6241783493383126144}
         m_TargetAssemblyTypeName: Codetox.FSM.StateMachineComponent, com.aruizrab.codetox
         m_MethodName: set_CurrentState
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 6241783493570651909}
+          m_ObjectArgument: {fileID: 2687579931015086886}
           m_ObjectArgumentAssemblyTypeName: Codetox.FSM.StateComponent, com.aruizrab.codetox
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6241783492642854077
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,7 +1187,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6241783492642854076}
-  - component: {fileID: 6241783492642854078}
   - component: {fileID: 6241783492642854079}
   m_Layer: 0
   m_Name: Jump Controller
@@ -990,34 +1210,6 @@ Transform:
   m_Father: {fileID: 6241783493570651914}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6241783492642854078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6241783492642854077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aceb4312ddc440a80f2565b3f117107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  event: {fileID: 11400000, guid: 050249d6529398b46ac5c97f4acdfbda, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6241783492642854079}
-        m_TargetAssemblyTypeName: Player.JumpController, Assembly-CSharp
-        m_MethodName: Jump
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &6241783492642854079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,12 +1235,13 @@ MonoBehaviour:
     useField: 1
     fieldValue: 0.35
     variableValue: {fileID: 0}
-  jumpAmount:
+  coyoteTime:
     useField: 1
-    fieldValue: 1
+    fieldValue: 0.1
     variableValue: {fileID: 0}
-  isGrounded: 0
-  isJumping: 0
+  isJumping: {fileID: 11400000, guid: 6a27a08c3d256be49b7822a042ad4c50, type: 2}
+  isGrounded: {fileID: 11400000, guid: d9c8494f8a88a4544ac82264c1c65a41, type: 2}
+  canJump: {fileID: 11400000, guid: db41417b32043d14a981fc415e613fd0, type: 2}
   onJump:
     m_PersistentCalls:
       m_Calls: []
@@ -1158,7 +1351,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 4d725c3de96b14f438882315c452922e, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -1172,11 +1365,11 @@ BoxCollider2D:
   m_GameObject: {fileID: 6241783492734311679}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4d725c3de96b14f438882315c452922e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0031679273, y: 0.00000010430813}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1187,8 +1380,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.659309, y: 0.66576743}
-  m_EdgeRadius: 0.25
+  m_Size: {x: 0.6, y: 0.6}
+  m_EdgeRadius: 0.3
 --- !u!1 &6241783493383126150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,10 +1414,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6241783493570651914}
-  - {fileID: 3346810346150030269}
   - {fileID: 6241783493924465482}
-  - {fileID: 2004965155179896228}
-  - {fileID: 783618160774514066}
+  - {fileID: 3383345475859973536}
+  - {fileID: 8321337852534224573}
+  - {fileID: 6714892897369336675}
   m_Father: {fileID: 6241783492734311674}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1244,10 +1437,10 @@ MonoBehaviour:
   currentState: {fileID: 0}
   states:
   - {fileID: 6241783493570651909}
-  - {fileID: 4078212158424299197}
   - {fileID: 6241783493924465477}
-  - {fileID: 4033890461835208531}
-  - {fileID: 6832741882952745947}
+  - {fileID: 2687579931015086886}
+  - {fileID: 7418826982645374075}
+  - {fileID: 2818325997813059232}
   onInit:
     m_PersistentCalls:
       m_Calls: []
@@ -1318,8 +1511,6 @@ GameObject:
   - component: {fileID: 6241783493570651914}
   - component: {fileID: 6241783493570651909}
   - component: {fileID: 6241783493570651908}
-  - component: {fileID: 904908158244992525}
-  - component: {fileID: 3196197285235359651}
   m_Layer: 0
   m_Name: Move State
   m_TagString: Untagged
@@ -1342,6 +1533,7 @@ Transform:
   - {fileID: 6241783493906317433}
   - {fileID: 6241783492642854076}
   - {fileID: 7729382302728229743}
+  - {fileID: 3496131827850861026}
   m_Father: {fileID: 6241783493383126145}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1391,62 +1583,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &904908158244992525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6241783493570651915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d99689d07e4220862eb4341c1c736a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  event: {fileID: 11400000, guid: 988631ed14754fe4fba04cd5119c6838, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6241783493383126144}
-        m_TargetAssemblyTypeName: Codetox.FSM.StateMachineComponent, com.aruizrab.codetox
-        m_MethodName: set_CurrentState
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 4033890461835208531}
-          m_ObjectArgumentAssemblyTypeName: Codetox.FSM.StateComponent, com.aruizrab.codetox
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &3196197285235359651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6241783493570651915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d99689d07e4220862eb4341c1c736a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  event: {fileID: 11400000, guid: ca23640973dee354a908f6c4043d9706, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6241783493383126144}
-        m_TargetAssemblyTypeName: Codetox.FSM.StateMachineComponent, com.aruizrab.codetox
-        m_MethodName: set_CurrentState
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6832741882952745947}
-          m_ObjectArgumentAssemblyTypeName: Codetox.FSM.StateComponent, com.aruizrab.codetox
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &6241783493600571055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,8 +1593,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6241783493600571054}
   - component: {fileID: 6241783493600571049}
+  - component: {fileID: 969151661695863035}
+  - component: {fileID: 7163168408488776861}
   m_Layer: 0
-  m_Name: Direction Controller
+  m_Name: Input Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1498,6 +1636,62 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: a05c701c6f534844e9118e67ba64cc25, type: 2}
         m_TargetAssemblyTypeName: Codetox.Variables.Variable`1[[UnityEngine.Vector2,
           UnityEngine
+        m_MethodName: set_Value
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &969151661695863035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6241783493600571055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aceb4312ddc440a80f2565b3f117107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event: {fileID: 11400000, guid: 050249d6529398b46ac5c97f4acdfbda, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 6a27a08c3d256be49b7822a042ad4c50, type: 2}
+        m_TargetAssemblyTypeName: Codetox.Variables.Variable`1[[System.Boolean, mscorlib
+        m_MethodName: set_Value
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7163168408488776861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6241783493600571055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aceb4312ddc440a80f2565b3f117107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event: {fileID: 11400000, guid: b0a2a06ccc11f314ca56e781e8e5f1f2, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: f6745f43dc6d73d4eb687da519319044, type: 2}
+        m_TargetAssemblyTypeName: Codetox.Variables.Variable`1[[System.Boolean, mscorlib
         m_MethodName: set_Value
         m_Mode: 0
         m_Arguments:
@@ -1563,9 +1757,8 @@ MonoBehaviour:
     variableValue: {fileID: 0}
   smoothTime:
     useField: 1
-    fieldValue: 0
+    fieldValue: 0.05
     variableValue: {fileID: 0}
-  doSmoothing: 1
 --- !u!1 &6241783493924465483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,7 +1790,7 @@ Transform:
   m_Children:
   - {fileID: 6241783494040582186}
   m_Father: {fileID: 6241783493383126145}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6241783493924465477
 MonoBehaviour:
@@ -1613,7 +1806,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onEnterState:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6241783494040582181}
+        m_TargetAssemblyTypeName: Player.DashController, Assembly-CSharp
+        m_MethodName: Dash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onExitState:
     m_PersistentCalls:
       m_Calls: []
@@ -1669,7 +1874,7 @@ MonoBehaviour:
     variableValue: {fileID: 0}
   time:
     useField: 1
-    fieldValue: 0.3
+    fieldValue: 0.25
     variableValue: {fileID: 0}
   cooldown:
     useField: 1
@@ -1686,7 +1891,19 @@ MonoBehaviour:
   ease: 9
   onDashStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: db41417b32043d14a981fc415e613fd0, type: 2}
+        m_TargetAssemblyTypeName: Codetox.Variables.Variable`1[[System.Boolean, mscorlib
+        m_MethodName: set_Value
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onDashFinish:
     m_PersistentCalls:
       m_Calls:
@@ -1702,92 +1919,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &6510965410881466231
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6353352611586564512}
-  - component: {fileID: 7850798509050225432}
-  m_Layer: 0
-  m_Name: Gun
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6353352611586564512
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6510965410881466231}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.7499999, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5068217888336237728}
-  - {fileID: 2185069054951690500}
-  m_Father: {fileID: 7993785766545931280}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7850798509050225432
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6510965410881466231}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &7221019089125673725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,7 +2026,7 @@ MonoBehaviour:
     fieldValue: 0.2
     variableValue: {fileID: 0}
   ease: 6
---- !u!1 &7275866760585055132
+--- !u!1 &7618234514441767466
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1903,41 +2034,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3346810346150030269}
-  - component: {fileID: 4078212158424299197}
-  - component: {fileID: 8201957831389915829}
+  - component: {fileID: 8321337852534224573}
+  - component: {fileID: 7418826982645374075}
+  - component: {fileID: 3413173033999558658}
   m_Layer: 0
   m_Name: Ice State
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3346810346150030269
+  m_IsActive: 0
+--- !u!4 &8321337852534224573
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7275866760585055132}
+  m_GameObject: {fileID: 7618234514441767466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4287909212842974322}
-  - {fileID: 5501998586322807751}
-  - {fileID: 603669656314385796}
+  - {fileID: 4054604659798809094}
+  - {fileID: 6685314955250450907}
+  - {fileID: 7872233577002126339}
+  - {fileID: 1503054850797761536}
   m_Father: {fileID: 6241783493383126145}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4078212158424299197
+--- !u!114 &7418826982645374075
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7275866760585055132}
+  m_GameObject: {fileID: 7618234514441767466}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8ee3985cbf44a03b87af5397e33788f, type: 3}
@@ -1949,13 +2081,13 @@ MonoBehaviour:
   onExitState:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8201957831389915829
+--- !u!114 &3413173033999558658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7275866760585055132}
+  m_GameObject: {fileID: 7618234514441767466}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02d99689d07e4220862eb4341c1c736a, type: 3}
@@ -1977,7 +2109,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &7430239869534960459
+--- !u!1 &7802481380006367550
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1985,40 +2117,189 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4287909212842974322}
-  - component: {fileID: 9199054096159010667}
+  - component: {fileID: 3496131827850861026}
+  - component: {fileID: 5892122523870522987}
+  - component: {fileID: 4854890292220815277}
   m_Layer: 0
-  m_Name: Movement Controller
+  m_Name: Wall Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4287909212842974322
+--- !u!4 &3496131827850861026
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7430239869534960459}
+  m_GameObject: {fileID: 7802481380006367550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.49999994, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3346810346150030269}
-  m_RootOrder: 0
+  m_Father: {fileID: 6241783493570651914}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9199054096159010667
+--- !u!61 &5892122523870522987
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7802481380006367550}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.75}
+  m_EdgeRadius: 0
+--- !u!114 &4854890292220815277
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7430239869534960459}
+  m_GameObject: {fileID: 7802481380006367550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 800d4970e8ec491b9200a66f99dfe5fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b1aba91f9544cad84a1f30dba38d5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayers:
+    useField: 1
+    fieldValue:
+      serializedVersion: 2
+      m_Bits: 512
+    variableValue: {fileID: 0}
+  detectionStrategy: -1
+  onCollisionEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6241783493383126144}
+        m_TargetAssemblyTypeName: Codetox.FSM.StateMachineComponent, com.aruizrab.codetox
+        m_MethodName: set_CurrentState
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2687579931015086886}
+          m_ObjectArgumentAssemblyTypeName: Codetox.FSM.StateComponent, com.aruizrab.codetox
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCollisionExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &8048642206938263675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6714892897369336675}
+  - component: {fileID: 2818325997813059232}
+  m_Layer: 0
+  m_Name: Water State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6714892897369336675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8048642206938263675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8881822706005592063}
+  - {fileID: 838850265262557315}
+  - {fileID: 5203201405864045820}
+  m_Father: {fileID: 6241783493383126145}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2818325997813059232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8048642206938263675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ee3985cbf44a03b87af5397e33788f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnterState:
+    m_PersistentCalls:
+      m_Calls: []
+  onExitState:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &8305108109174268818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 732878773714609583}
+  - component: {fileID: 7841251132019295223}
+  m_Layer: 0
+  m_Name: Wall Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &732878773714609583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8305108109174268818}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3383345475859973536}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7841251132019295223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8305108109174268818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b343b50da5470c9d8da9a606189c08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 6241783492734311673}
@@ -2026,180 +2307,27 @@ MonoBehaviour:
     useField: 0
     fieldValue: {x: 0, y: 0}
     variableValue: {fileID: 11400000, guid: a05c701c6f534844e9118e67ba64cc25, type: 2}
-  speed:
+  slidingSpeed:
     useField: 1
-    fieldValue: 25
+    fieldValue: 5
     variableValue: {fileID: 0}
-  smoothTime:
+  minHeight:
     useField: 1
-    fieldValue: 0.2
+    fieldValue: 1
     variableValue: {fileID: 0}
-  doSmoothing: 1
---- !u!1 &7684018744913982882
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1587076109868753070}
-  - component: {fileID: 4800724303845868485}
-  m_Layer: 0
-  m_Name: Visualizer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1587076109868753070
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7684018744913982882}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.499998, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3570338981890109216}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4800724303845868485
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7684018744913982882}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.2509804}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!1 &8231296821901776153
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7993785766545931280}
-  - component: {fileID: 7502769656258545735}
-  - component: {fileID: 5993420670042584465}
-  m_Layer: 0
-  m_Name: Shooter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7993785766545931280
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8231296821901776153}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6353352611586564512}
-  m_Father: {fileID: 783618160774514066}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7502769656258545735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8231296821901776153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a2b9f490a1a40749d7a407e7e1ec4df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbody: {fileID: 6241783492734311673}
-  direction: {fileID: 11400000, guid: a05c701c6f534844e9118e67ba64cc25, type: 2}
-  distance:
+  maxHeight:
     useField: 1
-    fieldValue: 20
+    fieldValue: 6
     variableValue: {fileID: 0}
-  source: {fileID: 5068217888336237728}
---- !u!114 &5993420670042584465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8231296821901776153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d99689d07e4220862eb4341c1c736a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  event: {fileID: 11400000, guid: 4708b1e66cc6c834a9b2c8296f4d40cf, type: 2}
-  unityEventResponse:
+  apexTime:
+    useField: 1
+    fieldValue: 0.35
+    variableValue: {fileID: 0}
+  isJumping: {fileID: 11400000, guid: 6a27a08c3d256be49b7822a042ad4c50, type: 2}
+  isGripping: {fileID: 11400000, guid: f6745f43dc6d73d4eb687da519319044, type: 2}
+  onLeaveWall:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7502769656258545735}
-        m_TargetAssemblyTypeName: Player.ShootingController, Assembly-CSharp
-        m_MethodName: ShootHot
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 6241783493383126144}
         m_TargetAssemblyTypeName: Codetox.FSM.StateMachineComponent, com.aruizrab.codetox
         m_MethodName: set_CurrentState
@@ -2212,89 +2340,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &8832754776468332216
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3570338981890109216}
-  - component: {fileID: 7816040058009486956}
-  m_Layer: 0
-  m_Name: Gun
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3570338981890109216
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8832754776468332216}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.7499999, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6242953221448711592}
-  - {fileID: 1587076109868753070}
-  m_Father: {fileID: 4110761764294079495}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7816040058009486956
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8832754776468332216}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0

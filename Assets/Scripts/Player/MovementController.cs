@@ -9,7 +9,6 @@ namespace Player
         public ValueReference<Vector2> direction;
         public ValueReference<float> speed;
         public ValueReference<float> smoothTime;
-        public bool doSmoothing;
 
         private float _currentVelocity;
 
@@ -19,7 +18,8 @@ namespace Player
             var directionValue = direction.Value.x;
             var currentVelocity = rigidbody.velocity;
             var targetVelocity = directionValue * speed.Value;
-            var finalVelocity = Mathf.SmoothDamp(currentVelocity.x, targetVelocity, ref _currentVelocity, doSmoothing ? smoothTime.Value : 0);
+            var finalVelocity =
+                Mathf.SmoothDamp(currentVelocity.x, targetVelocity, ref _currentVelocity, smoothTime.Value);
 
             rigidbody.velocity = new Vector2(finalVelocity, currentVelocity.y);
 
@@ -29,11 +29,6 @@ namespace Player
                 < 0f => Vector3.left,
                 _ => rigidbodyTransform.right
             };
-        }
-
-        public void SetDoSmoothing(bool condition)
-        {
-            doSmoothing = condition;
         }
     }
 }

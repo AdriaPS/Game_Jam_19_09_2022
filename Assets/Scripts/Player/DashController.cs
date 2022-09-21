@@ -1,5 +1,4 @@
-﻿using Codetox.Misc;
-using Codetox.Variables;
+﻿using Codetox.Variables;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
@@ -16,37 +15,30 @@ namespace Player
         public ValueReference<bool> canDash;
         public ValueReference<bool> isReady;
         public Ease ease;
-
         public UnityEvent onDashStart;
         public UnityEvent onDashFinish;
 
-        private void OnEnable()
-        {
-            Dash();
-        }
-
         public void Dash()
         {
-            if (canDash.Value && isReady.Value)
+            if (!canDash.Value || !isReady.Value)
             {
-                var dashDirection = GetDashDirection();
-                var finalPosition = rigidbody.position + distance.Value * (Vector2) transform.right;
+                onDashFinish?.Invoke();
+                return;
+            }
+            
+            var finalPosition = rigidbody.position + distance.Value * GetDashDirection();
 
-                canDash.Value = false;
-                isReady.Value = false;
-                rigidbody.velocity = Vector2.zero;
-                rigidbody.DOMove(finalPosition, time.Value).SetEase(ease).OnComplete(() =>
+            canDash.Value = false;
+            isReady.Value = false;
+            rigidbody.velocity = Vector2.zero;
+            rigidbody
+                .DOMove(finalPosition, time.Value)
+                .SetEase(ease).OnStart(() => onDashStart?.Invoke())
+                .OnComplete(() =>
                 {
                     DOVirtual.DelayedCall(cooldown.Value, () => isReady.Value = true);
                     onDashFinish?.Invoke();
                 });
-
-                onDashStart?.Invoke();
-            }
-            else
-            {
-                onDashFinish?.Invoke();
-            }
         }
 
         private Vector2 GetDashDirection()
@@ -55,16 +47,24 @@ namespace Player
             var x = dir.x;
             var y = dir.y;
 
-            if (x is >= 0.25f and <= 1f && y is >= 0.25f and <= 1f) return new Vector2(1, 1).normalized;
-            if (x is >= -1 and <= -0.25f && y is >= 0.25f and <= 1f) return new Vector2(-1, 1).normalized;
-            if (x is >= 0.25f and <= 1f && y is >= -1f and <= -0.25f) return new Vector2(1, -1).normalized;
-            if (x is >= -1f and <= -0.25f && y is >= -1f and <= 0.25f) return new Vector2(-1, -1).normalized;
-            if (x is >= -0.25f and <= 0.25f && y is >= 0f and <= 1f) return Vector2.up;
-            if (x is >= -0.25f and <= 0.25f && y is >= -1f and <= 0f) return Vector2.down;
-            if (x is >= 0f and <= 1f && y is >= -0.25f and <= 0.25f) return Vector2.right;
-            if (x is >= -1f and <= 0f && y is >= -0.25f and <= 0.25f) return Vector2.left;
-            
-            return Vector2.right;
+            return x switch
+            {
+                >= 0.20f and <= 0.80f when y is >= 0.20f and <= 0.80f => new Vector2(1, 1).normalized,
+                >= -0.80f and <= -0.20f when y is >= 0.20f and <= 0.80f => new Vector2(-1, 1).normalized,
+                >= 0.20f and <= 0.80f when y is >= -0.80f and <= -0.20f => new Vector2(1, -1).normalized,
+                >= -0.80f and <= -0.20f when y is >= -0.80f and <= -0.20f => new Vector2(-1, -1).normalized,
+                _ => y switch
+                {
+                    > 0.80f => Vector2.up,
+                    < -0.80f => Vector2.down,
+                    _ => x switch
+                    {
+                        > 0.80f => Vector2.right,
+                        < -0.80f => Vector2.left,
+                        _ => rigidbody.transform.right
+                    }
+                }
+            };
         }
     }
 }

@@ -1,5 +1,6 @@
-﻿using Codetox.Attributes;
-using Codetox.Variables;
+﻿using Codetox.Variables;
+using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,15 +12,14 @@ namespace Player
         public ValueReference<float> minHeight;
         public ValueReference<float> maxHeight;
         public ValueReference<float> apexTime;
-        public ValueReference<int> jumpAmount;
-        
-        [SerializeField] [Disabled] private bool isGrounded;
-        [SerializeField] [Disabled] private bool isJumping;
-
+        public ValueReference<float> coyoteTime;
+        public Variable<bool> isJumping;
+        public Variable<bool> isGrounded;
+        public Variable<bool> canJump;
         public UnityEvent onJump;
 
         private float _gravity, _maxVelocity, _minVelocity;
-        private int _jumpsLeft;
+        private bool _isInCoyoteTime;
 
         private void Awake()
         {
@@ -32,44 +32,50 @@ namespace Player
             _minVelocity = 2 * minHeightValue / apexTimeValue;
         }
 
-        private void OnDisable()
-        {
-            isGrounded = false;
-            isJumping = false;
-        }
-
         private void FixedUpdate()
         {
-            if (isGrounded) return;
+            if (isGrounded.Value) return;
 
             var velocity = rigidbody.velocity;
 
-            if (!isJumping && velocity.y > _minVelocity) velocity.y = _minVelocity;
+            if (!isJumping.Value && velocity.y > _minVelocity) velocity.y = _minVelocity;
+            else if (velocity.y < -_maxVelocity) velocity.y = -_maxVelocity;
             else velocity.y -= _gravity * Time.fixedDeltaTime;
 
             rigidbody.velocity = velocity;
         }
 
-        public void Jump(bool isJumping)
+        private void OnEnable()
         {
-            if (!isJumping)
-            {
-                this.isJumping = false;
-                return;
-            }
-
-            if (!isGrounded) return;
-            
-            rigidbody.velocity = new Vector2(rigidbody.velocity.x, _maxVelocity);
-            this.isJumping = true;
-            onJump?.Invoke();
-            //_jumpsLeft--;
+            _isInCoyoteTime = false;
+            isGrounded.Value = false;
+            isJumping.OnValueChanged += OnJump;
+            isGrounded.OnValueChanged += OnGrounded;
         }
 
-        public void OnTouchGround(bool isGrounded)
+        private void OnDisable()
         {
-            this.isGrounded = isGrounded;
-            //_jumpsLeft = jumpAmount.Value;
+            isJumping.OnValueChanged -= OnJump;
+            isGrounded.OnValueChanged -= OnGrounded;
+        }
+
+        private void OnJump(bool wannaJump)
+        {
+            if (wannaJump && (isGrounded.Value || _isInCoyoteTime || canJump.Value))
+            {
+                canJump.Value = false;
+                _isInCoyoteTime = false;
+                rigidbody.velocity = new Vector2(rigidbody.velocity.x, _maxVelocity);
+                onJump?.Invoke();
+            }
+        }
+
+        private void OnGrounded(bool condition)
+        {
+            if (condition) return;
+            DOVirtual
+                .DelayedCall(coyoteTime.Value, () => _isInCoyoteTime = false)
+                .OnStart(() => _isInCoyoteTime = true);
         }
     }
 }
