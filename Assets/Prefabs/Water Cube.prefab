@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1785084912579396207}
   - component: {fileID: 1785084912579396206}
   - component: {fileID: 1785084912579396205}
-  - component: {fileID: 1785084912579396204}
-  m_Layer: 2
+  - component: {fileID: 7618084046765901429}
+  m_Layer: 10
   m_Name: Vapor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!249 &1785084912579396204
+--- !u!249 &7618084046765901429
 AreaEffector2D:
   serializedVersion: 2
   m_ObjectHideFlags: 0
@@ -147,13 +147,13 @@ AreaEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseGlobalAngle: 1
+  m_UseGlobalAngle: 0
   m_ForceAngle: 90
-  m_ForceMagnitude: 100
+  m_ForceMagnitude: 250
   m_ForceVariation: 0
   m_ForceTarget: 0
-  m_Drag: 0
-  m_AngularDrag: 0
+  m_Drag: 5
+  m_AngularDrag: 5
 --- !u!1 &1785084913241096440
 GameObject:
   m_ObjectHideFlags: 0

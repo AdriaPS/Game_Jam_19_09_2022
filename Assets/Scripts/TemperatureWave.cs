@@ -14,6 +14,7 @@ public class TemperatureWave : MonoBehaviour
     }
 
     public Mode mode;
+    public ValueReference<LayerMask> targetLayers;
     public ValueReference<float> radius;
     public ValueReference<float> time;
     public Ease ease;
@@ -25,7 +26,7 @@ public class TemperatureWave : MonoBehaviour
         transform.DOScale(Vector3.one * radius.Value * 2, time.Value).SetEase(ease).SetUpdate(true)
             .OnComplete(() =>
             {
-                var colliders = Physics2D.OverlapCircleAll(transform.position, radius.Value);
+                var colliders = Physics2D.OverlapCircleAll(transform.position, radius.Value, targetLayers.Value);
                 colliders.ForEach(c => ApplyTemperature(c.gameObject));
                 Time.timeScale = 1;
                 gameObject.SetActive(false);
