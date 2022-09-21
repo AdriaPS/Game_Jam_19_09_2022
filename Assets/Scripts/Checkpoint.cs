@@ -7,7 +7,7 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     // Start is called before the first frame update
-    public ValueReference<GameObject> lastCheckpoint;
+    public Variable<GameObject> lastCheckpoint;
     public void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Checkpoint"))
