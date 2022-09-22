@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c42b15cb28e475e9affab0141519c28, type: 3}
-  m_Name: Grip Action Handler
+  m_Script: {fileID: 11500000, guid: b7f71d927db14e1f8719e48b987b12a8, type: 3}
+  m_Name: Grip Input Event Handler
   m_EditorClassIdentifier: 
   details:
     title: 
     description: 
     author: 
-  inputActionReference: {fileID: 6180672979835175775, guid: fbeffbcafdc2e0c428e7a08f753487ac, type: 3}
   onActionStartedEvent: {fileID: 0}
   onActionPerformedEvent: {fileID: 11400000, guid: b0a2a06ccc11f314ca56e781e8e5f1f2, type: 2}
   onActionCanceledEvent: {fileID: 11400000, guid: b0a2a06ccc11f314ca56e781e8e5f1f2, type: 2}

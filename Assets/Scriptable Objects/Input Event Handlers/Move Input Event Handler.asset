@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7470f307d94ba38645d28150c413e0, type: 3}
-  m_Name: Move Action Handler
+  m_Script: {fileID: 11500000, guid: 292330ba6455428abaeadac1e2416929, type: 3}
+  m_Name: Move Input Event Handler
   m_EditorClassIdentifier: 
   details:
     title: 
     description: 
     author: 
-  inputActionReference: {fileID: 3628436252122177229, guid: fbeffbcafdc2e0c428e7a08f753487ac, type: 3}
   onActionStartedEvent: {fileID: 11400000, guid: 60aead8f5d446a1448d3ae6f02e2a651, type: 2}
   onActionPerformedEvent: {fileID: 11400000, guid: 60aead8f5d446a1448d3ae6f02e2a651, type: 2}
   onActionCanceledEvent: {fileID: 11400000, guid: 60aead8f5d446a1448d3ae6f02e2a651, type: 2}
