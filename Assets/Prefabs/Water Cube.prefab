@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 1785084913531327856}
   - component: {fileID: 1785084913531327871}
   - component: {fileID: 8992316818291902141}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Vapor State
   m_TagString: Untagged
   m_Icon: {fileID: 0}

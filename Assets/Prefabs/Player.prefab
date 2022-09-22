@@ -72,11 +72,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayers:
-    useField: 1
+    useField: 0
     fieldValue:
       serializedVersion: 2
       m_Bits: 512
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 3e40cb676a171154e86033dd9cee6738, type: 2}
   detectionStrategy: -1
   onCollisionEnter:
     m_PersistentCalls:
@@ -157,7 +157,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onEnterState:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8572660997860304069}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Wall
+          m_BoolArgument: 0
+        m_CallState: 2
   onExitState:
     m_PersistentCalls:
       m_Calls: []
@@ -261,11 +273,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayers:
-    useField: 1
+    useField: 0
     fieldValue:
       serializedVersion: 2
       m_Bits: 16
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 756e41ba7ed0b154d977ec91b76fe367, type: 2}
   detectionStrategy: -1
   onCollisionEnter:
     m_PersistentCalls:
@@ -358,11 +370,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayers:
-    useField: 1
+    useField: 0
     fieldValue:
       serializedVersion: 2
       m_Bits: 256
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 42c57a4d13321974888eab1c78df6c0f, type: 2}
   detectionStrategy: -1
   onCollisionEnter:
     m_PersistentCalls:
@@ -419,11 +431,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayers:
-    useField: 1
+    useField: 0
     fieldValue:
       serializedVersion: 2
       m_Bits: 128
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: a2b6467c6adb4d54c87fca4b0dd0e87f, type: 2}
   detectionStrategy: -1
   onCollisionEnter:
     m_PersistentCalls:
@@ -516,11 +528,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayers:
-    useField: 1
+    useField: 0
     fieldValue:
       serializedVersion: 2
       m_Bits: 128
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: a2b6467c6adb4d54c87fca4b0dd0e87f, type: 2}
   detectionStrategy: -1
   onCollisionEnter:
     m_PersistentCalls:
@@ -577,11 +589,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayers:
-    useField: 1
+    useField: 0
     fieldValue:
       serializedVersion: 2
       m_Bits: 256
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 42c57a4d13321974888eab1c78df6c0f, type: 2}
   detectionStrategy: -1
   onCollisionEnter:
     m_PersistentCalls:
@@ -651,13 +663,13 @@ MonoBehaviour:
     fieldValue: {x: 0, y: 0}
     variableValue: {fileID: 11400000, guid: a05c701c6f534844e9118e67ba64cc25, type: 2}
   speed:
-    useField: 1
+    useField: 0
     fieldValue: 25
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 75d8b3b5e1e5fb34580c7f2af36b2071, type: 2}
   smoothTime:
-    useField: 1
+    useField: 0
     fieldValue: 0.15
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: bcd754ee2bdf6e14bad1fb5d7505d09a, type: 2}
 --- !u!1 &3046194171294812883
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,13 +720,13 @@ MonoBehaviour:
     fieldValue: {x: 0, y: 0}
     variableValue: {fileID: 11400000, guid: a05c701c6f534844e9118e67ba64cc25, type: 2}
   speed:
-    useField: 1
+    useField: 0
     fieldValue: 15
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 705398c5bad168943b3ec69ee86258e2, type: 2}
   smoothTime:
-    useField: 1
+    useField: 0
     fieldValue: 0.05
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: d7fd16667965044438ec7d78978305e7, type: 2}
 --- !u!1 &4473647998514718372
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,21 +773,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 6241783492734311673}
   minHeight:
-    useField: 1
+    useField: 0
     fieldValue: 1
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 121d07e80637c7b40ba6f26c18409d07, type: 2}
   maxHeight:
-    useField: 1
+    useField: 0
     fieldValue: 4
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: a44b6cfd6a80ab64581a976a7f741f5f, type: 2}
   apexTime:
-    useField: 1
+    useField: 0
     fieldValue: 0.3
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 3872e48ee9a3359439edb7d99abca6c3, type: 2}
   coyoteTime:
-    useField: 1
+    useField: 0
     fieldValue: 0.1
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 28d32f1ee9f2b7b4e9734b4057bd57a6, type: 2}
   isJumping: {fileID: 11400000, guid: 6a27a08c3d256be49b7822a042ad4c50, type: 2}
   isGrounded: {fileID: 11400000, guid: d9c8494f8a88a4544ac82264c1c65a41, type: 2}
   canJump: {fileID: 11400000, guid: db41417b32043d14a981fc415e613fd0, type: 2}
@@ -881,19 +893,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 0
   targetLayers:
-    useField: 1
+    useField: 0
     fieldValue:
       serializedVersion: 2
       m_Bits: 272
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 1162977fd2de870488aa524e587d5095, type: 2}
   radius:
-    useField: 1
+    useField: 0
     fieldValue: 10
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 16c20ac4d58a5d141aa647798b67674d, type: 2}
   time:
-    useField: 1
+    useField: 0
     fieldValue: 0.2
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 25081d1aadb617447b4e5d537315a40b, type: 2}
   ease: 6
 --- !u!1 &5174827825502105387
 GameObject:
@@ -941,21 +953,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 6241783492734311673}
   minHeight:
-    useField: 1
+    useField: 0
     fieldValue: 1
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 121d07e80637c7b40ba6f26c18409d07, type: 2}
   maxHeight:
-    useField: 1
+    useField: 0
     fieldValue: 4
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: a44b6cfd6a80ab64581a976a7f741f5f, type: 2}
   apexTime:
-    useField: 1
+    useField: 0
     fieldValue: 0.3
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 3872e48ee9a3359439edb7d99abca6c3, type: 2}
   coyoteTime:
-    useField: 1
+    useField: 0
     fieldValue: 0.1
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 28d32f1ee9f2b7b4e9734b4057bd57a6, type: 2}
   isJumping: {fileID: 11400000, guid: 6a27a08c3d256be49b7822a042ad4c50, type: 2}
   isGrounded: {fileID: 11400000, guid: d9c8494f8a88a4544ac82264c1c65a41, type: 2}
   canJump: {fileID: 11400000, guid: db41417b32043d14a981fc415e613fd0, type: 2}
@@ -1034,11 +1046,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayers:
-    useField: 1
+    useField: 0
     fieldValue:
       serializedVersion: 2
       m_Bits: 512
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 3e40cb676a171154e86033dd9cee6738, type: 2}
   detectionStrategy: -1
   onCollisionEnter:
     m_PersistentCalls:
@@ -1123,9 +1135,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time:
-    useField: 1
+    useField: 0
     fieldValue: 1
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: e4f8c106eeebebe49912a23dd255d7c7, type: 2}
   currentValue: 0
   loop: 0
   autoPlay: 1
@@ -1203,27 +1215,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 6241783492734311673}
   minHeight:
-    useField: 1
+    useField: 0
     fieldValue: 1
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 121d07e80637c7b40ba6f26c18409d07, type: 2}
   maxHeight:
-    useField: 1
+    useField: 0
     fieldValue: 4
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: a44b6cfd6a80ab64581a976a7f741f5f, type: 2}
   apexTime:
-    useField: 1
+    useField: 0
     fieldValue: 0.3
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 3872e48ee9a3359439edb7d99abca6c3, type: 2}
   coyoteTime:
-    useField: 1
+    useField: 0
     fieldValue: 0.1
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 28d32f1ee9f2b7b4e9734b4057bd57a6, type: 2}
   isJumping: {fileID: 11400000, guid: 6a27a08c3d256be49b7822a042ad4c50, type: 2}
   isGrounded: {fileID: 11400000, guid: d9c8494f8a88a4544ac82264c1c65a41, type: 2}
   canJump: {fileID: 11400000, guid: db41417b32043d14a981fc415e613fd0, type: 2}
   onJump:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8572660997860304069}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Jump
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6241783492734311679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,6 +1262,7 @@ GameObject:
   - component: {fileID: 4881335614326706184}
   - component: {fileID: 6394001166565694626}
   - component: {fileID: 8572660997860304069}
+  - component: {fileID: 989819383795264854}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1302,7 +1327,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.875, y: 1.875}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 1.875, y: 1.875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1400,7 +1425,7 @@ Animator:
   m_GameObject: {fileID: 6241783492734311679}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 764e0a55572cf664eb6aa4069543b868, type: 2}
+  m_Controller: {fileID: 9100000, guid: 194bb6e5a052aab4ea3780dacc5f86be, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1410,6 +1435,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &989819383795264854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6241783492734311679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090c6d9624a74b33b367e02331c4d709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 6241783492734311673}
+  animator: {fileID: 8572660997860304069}
+  direction: {fileID: 11400000, guid: a05c701c6f534844e9118e67ba64cc25, type: 2}
+  isWallGripping: {fileID: 11400000, guid: f6745f43dc6d73d4eb687da519319044, type: 2}
 --- !u!1 &6241783493383126150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,7 +1623,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onEnterState:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8572660997860304069}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Move
+          m_BoolArgument: 0
+        m_CallState: 2
   onExitState:
     m_PersistentCalls:
       m_Calls: []
@@ -1783,13 +1836,13 @@ MonoBehaviour:
     fieldValue: {x: 0, y: 0}
     variableValue: {fileID: 11400000, guid: a05c701c6f534844e9118e67ba64cc25, type: 2}
   speed:
-    useField: 1
+    useField: 0
     fieldValue: 15
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 705398c5bad168943b3ec69ee86258e2, type: 2}
   smoothTime:
-    useField: 1
+    useField: 0
     fieldValue: 0.05
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: d7fd16667965044438ec7d78978305e7, type: 2}
 --- !u!1 &6241783493924465483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,17 +1953,17 @@ MonoBehaviour:
   rigidbody: {fileID: 6241783492734311673}
   direction: {fileID: 11400000, guid: a05c701c6f534844e9118e67ba64cc25, type: 2}
   distance:
-    useField: 1
+    useField: 0
     fieldValue: 8
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 2ff3d1979eaa70948ac828dc98f50b4a, type: 2}
   time:
-    useField: 1
+    useField: 0
     fieldValue: 0.25
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 87342aa6924f82b44889fe1b561cb088, type: 2}
   cooldown:
-    useField: 1
+    useField: 0
     fieldValue: 0.1
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 92ec4add4c22ff547aa9798f62cee0aa, type: 2}
   canDash:
     useField: 0
     fieldValue: 0
@@ -1933,6 +1986,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 8572660997860304069}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dash
           m_BoolArgument: 1
         m_CallState: 2
   onDashFinish:
@@ -2022,11 +2087,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayers:
-    useField: 1
+    useField: 0
     fieldValue:
       serializedVersion: 2
       m_Bits: 16
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 756e41ba7ed0b154d977ec91b76fe367, type: 2}
   detectionStrategy: -1
   onCollisionEnter:
     m_PersistentCalls:
@@ -2145,19 +2210,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mode: 1
   targetLayers:
-    useField: 1
+    useField: 0
     fieldValue:
       serializedVersion: 2
       m_Bits: 272
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 1162977fd2de870488aa524e587d5095, type: 2}
   radius:
-    useField: 1
+    useField: 0
     fieldValue: 10
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 16c20ac4d58a5d141aa647798b67674d, type: 2}
   time:
-    useField: 1
+    useField: 0
     fieldValue: 0.2
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 25081d1aadb617447b4e5d537315a40b, type: 2}
   ease: 6
 --- !u!1 &7618234514441767466
 GameObject:
@@ -2315,11 +2380,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayers:
-    useField: 1
+    useField: 0
     fieldValue:
       serializedVersion: 2
       m_Bits: 512
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 3e40cb676a171154e86033dd9cee6738, type: 2}
   detectionStrategy: -1
   onCollisionEnter:
     m_PersistentCalls:
@@ -2442,21 +2507,21 @@ MonoBehaviour:
     fieldValue: {x: 0, y: 0}
     variableValue: {fileID: 11400000, guid: a05c701c6f534844e9118e67ba64cc25, type: 2}
   slidingSpeed:
-    useField: 1
+    useField: 0
     fieldValue: 5
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: c95336b149e196c4daf7814ea5be471a, type: 2}
   minHeight:
-    useField: 1
+    useField: 0
     fieldValue: 1
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: e2d401408bfeb32429850fe87427d981, type: 2}
   maxHeight:
-    useField: 1
+    useField: 0
     fieldValue: 6
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: b4aa2ea346779f74aa1ffffca8cd35d8, type: 2}
   apexTime:
-    useField: 1
+    useField: 0
     fieldValue: 0.35
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 82649b7102910d04380da69195331044, type: 2}
   isJumping: {fileID: 11400000, guid: 6a27a08c3d256be49b7822a042ad4c50, type: 2}
   isGripping: {fileID: 11400000, guid: f6745f43dc6d73d4eb687da519319044, type: 2}
   onLeaveWall:
@@ -2546,11 +2611,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayers:
-    useField: 1
+    useField: 0
     fieldValue:
       serializedVersion: 2
       m_Bits: 16
-    variableValue: {fileID: 0}
+    variableValue: {fileID: 11400000, guid: 756e41ba7ed0b154d977ec91b76fe367, type: 2}
   detectionStrategy: -1
   onCollisionEnter:
     m_PersistentCalls:
