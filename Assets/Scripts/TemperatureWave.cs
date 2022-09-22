@@ -17,13 +17,15 @@ public class TemperatureWave : MonoBehaviour
     public ValueReference<LayerMask> targetLayers;
     public ValueReference<float> radius;
     public ValueReference<float> time;
-    public Ease ease;
+    public Ease expansionEase;
+    public Ease effectEase;
+    public GameObject sphere;
 
     private void OnEnable()
     {
         Time.timeScale = 0;
         transform.localScale = Vector3.zero;
-        transform.DOScale(Vector3.one * radius.Value * 2, time.Value).SetEase(ease).SetUpdate(true)
+        transform.DOScale(Vector3.one * radius.Value * 2, time.Value).SetEase(expansionEase).SetUpdate(true)
             .OnComplete(() =>
             {
                 var colliders = Physics2D.OverlapCircleAll(transform.position, radius.Value, targetLayers.Value);
@@ -31,6 +33,10 @@ public class TemperatureWave : MonoBehaviour
                 Time.timeScale = 1;
                 gameObject.SetActive(false);
             });
+        var material = sphere.GetComponent<MeshRenderer>().material;
+        material.SetInt("_isHeat", mode == Mode.Heat ? 1 : 0);
+        material.SetFloat("_AlphaThreshold", 0);
+        material.DOFloat(1, "_AlphaThreshold", time.Value).SetEase(effectEase).SetUpdate(true);
     }
 
     public void ApplyTemperature(GameObject target)

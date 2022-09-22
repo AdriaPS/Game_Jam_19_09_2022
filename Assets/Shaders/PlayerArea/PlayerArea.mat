@@ -44,12 +44,12 @@ Material:
     - _Lerp: 0.9
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Transparency: 0.56
-    - _isHeat: 1
+    - _Transparency: 0.4
+    - _isHeat: 0
     - _isTransparent: 0
     m_Colors:
-    - _ColdColor: {r: 1.2541138, g: 5.656854, b: 5.3963366, a: 0}
-    - _HeatColor: {r: 3.4415908, g: 1.7117859, b: 1.7117859, a: 0}
+    - _ColdColor: {r: 3.3216763, g: 14.754423, b: 14.136436, a: 0}
+    - _HeatColor: {r: 13.76636, g: 6.847142, b: 6.847142, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5132629605364033041
 MonoBehaviour:

@@ -40,7 +40,7 @@ Material:
     m_Floats:
     - _EdgeThiccness: 0.1
     - _Fade: 1
-    - _NoiseScale: 5
+    - _NoiseScale: 25
     m_Colors:
     - _EdgeColor: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 0}
   m_BuildTextureStacks: []
