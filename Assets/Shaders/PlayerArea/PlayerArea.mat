@@ -39,17 +39,17 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaThreshold: 0
-    - _DitherPower: 1.35
+    - _DitherPower: 0.95
     - _FresnelPower: 0.78
     - _Lerp: 0.45
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Transparency: 0.83
-    - _isHeat: 0
+    - _Transparency: 0.94
+    - _isHeat: 1
     - _isTransparent: 0
     m_Colors:
-    - _ColdColor: {r: 0.24402116, g: 2.1185474, b: 2.0076287, a: 0}
-    - _HeatColor: {r: 1.2811111, g: 0.4991342, b: 0.4991342, a: 0}
+    - _ColdColor: {r: 1.2541138, g: 5.656854, b: 5.3963366, a: 0}
+    - _HeatColor: {r: 2, g: 0.990566, b: 0.990566, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5132629605364033041
 MonoBehaviour:
