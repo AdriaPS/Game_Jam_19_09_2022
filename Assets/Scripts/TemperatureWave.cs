@@ -35,8 +35,8 @@ public class TemperatureWave : MonoBehaviour
             });
         var material = sphere.GetComponent<MeshRenderer>().material;
         material.SetInt("_isHeat", mode == Mode.Heat ? 1 : 0);
-        material.SetFloat("_FresnelPower", 0f);
-        material.DOFloat(5f, "_FresnelPower", time.Value).SetEase(effectEase).SetUpdate(true);
+        material.SetFloat("_AlphaThreshold", 0);
+        material.DOFloat(1, "_AlphaThreshold", time.Value).SetEase(effectEase).SetUpdate(true);
     }
 
     public void ApplyTemperature(GameObject target)

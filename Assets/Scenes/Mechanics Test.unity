@@ -2206,6 +2206,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2782197, guid: 73b81c88d7a861e4e86057608071793f, type: 3}
+      propertyPath: fallVelocity
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1357625351964596331, guid: 73b81c88d7a861e4e86057608071793f, type: 3}
       propertyPath: m_Name
       value: Falling Water
