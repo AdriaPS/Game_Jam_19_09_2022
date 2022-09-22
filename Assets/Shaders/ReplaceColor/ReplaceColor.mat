@@ -42,17 +42,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ColorChanged: 0
+    - _ColorChanged: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ReplaceFuziness: 0
-    - _ReplaceRange: 0.18
+    - _ReplaceFuziness: 0.19
+    - _ReplaceRange: 0.19
     - _isGlowing: 0
     m_Colors:
     - _CapeColor1: {r: 0.75294125, g: 0.4666667, b: 0.5529412, a: 1}
     - _CapeColor2: {r: 0.4431373, g: 0.30588236, b: 0.41960788, a: 1}
     - _CapeColorChanged1: {r: 0.86516595, g: 4.237095, b: 4.237095, a: 0}
-    - _CapeColorChanged2: {r: 0.20392157, g: 2.0862746, b: 3.937255, a: 0}
+    - _CapeColorChanged2: {r: 0.103490815, g: 1.0556062, b: 1.9766746, a: 0}
     - _GlowColor: {r: 3.623529, g: 3.309804, b: 3.309804, a: 0}
     - _GlowingColor: {r: 3.735849, g: 3.542008, b: 3.542008, a: 0}
   m_BuildTextureStacks: []
