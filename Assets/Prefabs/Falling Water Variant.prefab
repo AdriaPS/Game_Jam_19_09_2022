@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1785084913371655066, guid: 101877075cea76d4d92c856f01ba76b3, type: 3}
       propertyPath: m_Name
-      value: Falling Water
+      value: Falling Water Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1785084913371655068, guid: 101877075cea76d4d92c856f01ba76b3, type: 3}
       propertyPath: m_RootOrder
@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5327094514421049807, guid: 101877075cea76d4d92c856f01ba76b3, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 269e5960365567949a11f5f70561351d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 101877075cea76d4d92c856f01ba76b3, type: 3}
 --- !u!1 &1357625351817278217 stripped
@@ -119,5 +123,5 @@ MonoBehaviour:
   shakeStrength: {x: 0.15, y: 0.15, z: 0}
   vibrato: 20
   fallDelay: 1
-  fallVelocity: 25
+  fallVelocity: 15
   finalPosition: {x: -1, y: -2, z: 0}
