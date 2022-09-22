@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Water : MonoBehaviour
 {
     public WaterState water;
     public WaterState ice;
     public WaterState vapor;
+
+    public UnityEvent onSetToWater;
+    public UnityEvent onSetToIce;
+    public UnityEvent onSetToVapor;
 
     private WaterState[] _states;
 
@@ -21,10 +26,12 @@ public class Water : MonoBehaviour
         if (ice.prefab.activeSelf)
         {
             SetState(water);
+            onSetToIce?.Invoke();
         }
         else if (water.prefab.activeSelf)
         {
             SetState(vapor);
+            onSetToVapor?.Invoke();
         }
     }
 
@@ -33,10 +40,12 @@ public class Water : MonoBehaviour
         if (vapor.prefab.activeSelf)
         {
             SetState(water);
+            onSetToWater?.Invoke();
         }
         else if (water.prefab.activeSelf)
         {
             SetState(ice);
+            onSetToIce?.Invoke();
         }
     }
 

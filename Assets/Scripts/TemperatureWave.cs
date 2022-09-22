@@ -48,6 +48,6 @@ public class TemperatureWave : MonoBehaviour
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-        }, Scope.Parents);
+        }, Scope.ParentsAndChildren);
     }
 }

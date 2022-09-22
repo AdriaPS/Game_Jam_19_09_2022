@@ -343,6 +343,15 @@ MonoBehaviour:
   vapor:
     prefab: {fileID: 1785084913531327870}
     defaultState: 0
+  onSetToWater:
+    m_PersistentCalls:
+      m_Calls: []
+  onSetToIce:
+    m_PersistentCalls:
+      m_Calls: []
+  onSetToVapor:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1785084913531327870
 GameObject:
   m_ObjectHideFlags: 0
