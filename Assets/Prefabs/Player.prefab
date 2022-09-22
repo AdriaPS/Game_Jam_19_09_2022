@@ -1237,6 +1237,7 @@ GameObject:
   - component: {fileID: 6394001166565694626}
   - component: {fileID: 8572660997860304069}
   - component: {fileID: 989819383795264854}
+  - component: {fileID: 6910706706850534530}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1425,6 +1426,20 @@ MonoBehaviour:
   animator: {fileID: 8572660997860304069}
   direction: {fileID: 11400000, guid: a05c701c6f534844e9118e67ba64cc25, type: 2}
   isWallGripping: {fileID: 11400000, guid: f6745f43dc6d73d4eb687da519319044, type: 2}
+--- !u!114 &6910706706850534530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6241783492734311679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a85b2f4cfa54d9dbe8837decb97002e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canDash: {fileID: 11400000, guid: 1c9ec223cf3079a42852567705ea5111, type: 2}
+  dashIsReady: {fileID: 11400000, guid: 02242291439ef6b4fa0355b941cbca23, type: 2}
 --- !u!1 &6241783493383126150
 GameObject:
   m_ObjectHideFlags: 0
