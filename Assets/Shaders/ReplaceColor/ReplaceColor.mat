@@ -48,8 +48,8 @@ Material:
     - _QueueOffset: 0
     - _ReplaceFuziness: 0.15
     - _ReplaceRange: 0.18
-    - _isCold: 1
-    - _isColorChanged: 1
+    - _isCold: 0
+    - _isColorChanged: 0
     - _isGlowing: 0
     m_Colors:
     - _CapeColor1: {r: 0.75294125, g: 0.4666667, b: 0.5529412, a: 1}
