@@ -16,6 +16,7 @@ namespace Player
         public Variable<bool> isJumping;
         public Variable<bool> isGripping;
         public UnityEvent onLeaveWall;
+        public UnityEvent onWallJump;
 
         private float _gravity;
         private bool _isWallJumping;
@@ -69,6 +70,7 @@ namespace Player
             if (!wannaJump) return;
             rigidbody.velocity = new Vector2(-rigidbody.transform.right.x * _maxVelocity * 0.75f, _maxVelocity);
             _isWallJumping = true;
+            onWallJump?.Invoke();
             DOVirtual.DelayedCall(0.1f, () =>
             {
                 _isWallJumping = false;

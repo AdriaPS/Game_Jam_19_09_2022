@@ -48,5 +48,33 @@ namespace Player
                 spriteRenderer.material.SetInt("_NoDash", 1);
             }
         }
+
+        public void OnHeatWaveStart()
+        {
+            spriteRenderer.material.SetInt("_isColorChanged", 1);
+            spriteRenderer.material.SetInt("_NoDash", 0);
+            spriteRenderer.material.SetInt("_isCold", 0);
+        }
+
+        public void OnFreezeWaveStart()
+        {
+            spriteRenderer.material.SetInt("_isColorChanged", 1);
+            spriteRenderer.material.SetInt("_NoDash", 0);
+            spriteRenderer.material.SetInt("_isCold", 1);
+        }
+
+        public void OnWaveFinish()
+        {
+            if (canDash.Value && dashIsReady.Value)
+            {
+                spriteRenderer.material.SetInt("_isColorChanged", 0);
+                spriteRenderer.material.SetInt("_NoDash", 0);
+            }
+            else
+            {
+                spriteRenderer.material.SetInt("_isColorChanged", 1);
+                spriteRenderer.material.SetInt("_NoDash", 1);
+            }
+        }
     }
 }
