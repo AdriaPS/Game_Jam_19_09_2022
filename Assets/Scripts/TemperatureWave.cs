@@ -23,6 +23,8 @@ public class TemperatureWave : MonoBehaviour
     public GameObject sphere;
     public ValueReference<float> cooldown;
     public ValueReference<bool> isReady;
+    
+    public CameraShake cameraShake;
 
     public UnityEvent onStartWave;
     public UnityEvent onFinishWave;
@@ -38,6 +40,7 @@ public class TemperatureWave : MonoBehaviour
         isReady.Value = false;
         Time.timeScale = 0;
         transform.localScale = Vector3.zero;
+        StartCoroutine(cameraShake.Shake(.15f, .2f));
         transform.DOScale(Vector3.one * radius.Value * 2, time.Value).SetEase(expansionEase).SetUpdate(true)
             .OnComplete(() =>
             {

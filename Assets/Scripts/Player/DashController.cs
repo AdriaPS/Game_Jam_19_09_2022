@@ -18,6 +18,8 @@ namespace Player
         public UnityEvent onDashStart;
         public UnityEvent onDashFinish;
 
+        public CameraShake cameraShake;
+
         private Tweener tween;
 
         private void OnDisable()
@@ -35,6 +37,8 @@ namespace Player
 
             var finalPosition = rigidbody.position + distance.Value * GetDashDirection();
 
+            StartCoroutine(cameraShake.Shake(.15f, .2f));
+            
             canDash.Value = false;
             isReady.Value = false;
             rigidbody.velocity = Vector2.zero;
