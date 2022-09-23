@@ -21,13 +21,21 @@ public class TemperatureWave : MonoBehaviour
     public Ease expansionEase;
     public Ease effectEase;
     public GameObject sphere;
-    
+    public ValueReference<float> cooldown;
+    public ValueReference<bool> isReady;
+
     public UnityEvent onStartWave;
     public UnityEvent onFinishWave;
 
     private void OnEnable()
     {
+        if (!isReady.Value)
+        {
+            onFinishWave?.Invoke();
+            return;
+        }
         onStartWave?.Invoke();
+        isReady.Value = false;
         Time.timeScale = 0;
         transform.localScale = Vector3.zero;
         transform.DOScale(Vector3.one * radius.Value * 2, time.Value).SetEase(expansionEase).SetUpdate(true)
@@ -36,8 +44,8 @@ public class TemperatureWave : MonoBehaviour
                 var colliders = Physics2D.OverlapCircleAll(transform.position, radius.Value, targetLayers.Value);
                 colliders.ForEach(c => ApplyTemperature(c.gameObject));
                 Time.timeScale = 1;
-                gameObject.SetActive(false);
                 onFinishWave?.Invoke();
+                DOVirtual.DelayedCall(cooldown.Value, () => isReady.Value = true);
             });
         var material = sphere.GetComponent<MeshRenderer>().material;
         material.SetInt("_isHeat", mode == Mode.Heat ? 1 : 0);
