@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a729b170636f78a4bb67ebcd852a4e35
+guid: 4b8833ad08744244b975d57a2178c60a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: trees_01_0
+      name: char_jump_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 409
-        height: 1600
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 449c11b1a6cbd2a48abe75512b732772
-      internalID: -1030923804
+      spriteID: 4df2b7d2aa6aa04498e973d94fc12334
+      internalID: -1495464473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trees_01_1
+      name: char_jump_1
       rect:
         serializedVersion: 2
-        x: 409
+        x: 300
         y: 0
-        width: 409
-        height: 1600
+        width: 300
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 104f600e430cb0144b124639bb9d9b9f
-      internalID: -1757013466
+      spriteID: dc1290da3fbd0f5449040d76e89752bd
+      internalID: -1067831936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: char_jump_2
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39c77fd52688fe04e8c8caf730317da6
+      internalID: 1066311568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: char_jump_3
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c68d4cd60ce60489bd56414ea02544
+      internalID: -816176677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: char_jump_4
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9f41e35e6393947ad87291da5ac39d
+      internalID: -1712608386
       vertices: []
       indices: 
       edges: []
@@ -157,8 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      trees_01_0: -1030923804
-      trees_01_1: -1757013466
+      char_jump_3: -816176677
+      char_jump_0: -1495464473
+      char_jump_4: -1712608386
+      char_jump_1: -1067831936
+      char_jump_2: 1066311568
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -17,6 +17,7 @@ namespace Player
         public Variable<bool> isGrounded;
         public Variable<bool> canJump;
         public UnityEvent onJump;
+        public ParticleSpawner particleSpawner;
 
         private float _gravity, _maxVelocity, _minVelocity;
         private bool _isInCoyoteTime;
@@ -67,6 +68,10 @@ namespace Player
                 _isInCoyoteTime = false;
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, _maxVelocity);
                 onJump?.Invoke();
+            }
+            if (isGrounded.Value)
+            {
+                particleSpawner.Spawn();
             }
         }
 

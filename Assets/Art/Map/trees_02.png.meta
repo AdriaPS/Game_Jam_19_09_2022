@@ -110,8 +110,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 435
-        height: 870
+        width: 409
+        height: 1600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41edf49cff27d7c4a8a69641869145bb
-      internalID: 845853657
+      spriteID: 58d2b225d344e284994693612c6945ca
+      internalID: 753719187
       vertices: []
       indices: 
       edges: []
@@ -129,10 +129,10 @@ TextureImporter:
       name: trees_02_1
       rect:
         serializedVersion: 2
-        x: 435
+        x: 409
         y: 0
-        width: 435
-        height: 870
+        width: 409
+        height: 1600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 411b07c5b6aaf6f4990d8d4a585608ab
-      internalID: 1805842423
+      spriteID: 6cacb9512d41a134f80dd04cd05e3bc7
+      internalID: 1023411146
       vertices: []
       indices: 
       edges: []
@@ -157,8 +157,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      trees_02_0: 845853657
-      trees_02_1: 1805842423
+      trees_02_0: 753719187
+      trees_02_1: 1023411146
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
