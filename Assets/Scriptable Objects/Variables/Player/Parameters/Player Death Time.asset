@@ -18,5 +18,5 @@ MonoBehaviour:
       el nivel, para spawnear particulas y cosas. (En segundos)
     author: 
   id: 22e18bfa5b93afd41a4636226311c06b
-  value: 1
+  value: 0.01
   readOnly: 0
