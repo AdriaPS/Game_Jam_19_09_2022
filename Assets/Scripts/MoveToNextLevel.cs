@@ -16,7 +16,7 @@ public class MoveToNextLevel : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (SceneManager.GetActiveScene().buildIndex == 7)
+            if (SceneManager.GetActiveScene().buildIndex == 5)
             {
                 SceneManager.LoadScene(0);
             }
@@ -35,5 +35,10 @@ public class MoveToNextLevel : MonoBehaviour
     public void GoToLevel(int level)
     {
         SceneManager.LoadScene(level);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
